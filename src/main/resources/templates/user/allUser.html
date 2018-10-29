@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="description" content="userDetail" />
+	<title>allUser</title>
+</head>
+<body>
+	<div>全部用户</div>
+	<table>
+		<thead>
+			<tr>
+				<td>id</td>
+				<td>用户名</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user, userStat:${allUserList}">
+				<td th:text="${user.userId}">
+				</td>
+				<td>
+					<a href="javascript:;" th:text="${user.userName}" th:onclick="${'userDetail('+user.userId+')'}"></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<input id="jwt" type="hidden" th:value="${#httpServletRequest.getAttribute('jwt')}"/>
+
+	<script src="/static/js/jquery-2.0.3.min.js"></script>
+	<script th:src="@{'/static/js/localStorage.js'}"></script>
+	<script th:src="@{'/static/js/allUser.js'}"></script>
+</body>
+</html>

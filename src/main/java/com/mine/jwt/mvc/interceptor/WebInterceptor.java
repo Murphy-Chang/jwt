@@ -19,19 +19,18 @@ import javax.servlet.http.HttpServletResponse;
  * @version 1.0
  * @date 2018/6/12
  */
-@Component
 public class WebInterceptor implements HandlerInterceptor {
-    private final static Logger logger = LoggerFactory.getLogger(WebInterceptor.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(WebInterceptor.class);
     
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-    	logger.info("----------web start----------");
+    	LOGGER.info("----------web start----------");
         //获取访问的IP
         String ip = IpUtil.getIpAddress(request);
         long startTime = System.currentTimeMillis();
         request.setAttribute("requestStartTime", startTime);
-        String path = String.format("%s://%s:%s%s", request.getScheme(), request.getServerName(), request.getServerPort(), request.getRequestURI());
-        logger.info("ip:{}, sessionId:{}, path:{}", ip, request.getSession().getId(), path);
+//        String path = String.format("%s://%s:%s%s", request.getScheme(), request.getServerName(), request.getServerPort(), request.getRequestURI());
+        LOGGER.info("ip:{}, sessionId:{}, path:{}", ip, request.getSession().getId(), request.getRequestURI());
 
         return true;
     }
@@ -41,7 +40,7 @@ public class WebInterceptor implements HandlerInterceptor {
     	long startTime = (Long) request.getAttribute("requestStartTime");
         long endTime = System.currentTimeMillis();
         long executeTime = endTime - startTime;
-        logger.info("----------web end spend:{}ms----------", executeTime);
+        LOGGER.info("----------web end spend:{}ms----------", executeTime);
     }
 
     @Override

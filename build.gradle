@@ -30,6 +30,8 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-test',
             'mysql:mysql-connector-java:6.0.5',
             'com.alibaba:fastjson:1.2.31',
-            'io.jsonwebtoken:jjwt-api:0.10.5'
+            'io.jsonwebtoken:jjwt-api:0.10.5',
+            'io.jsonwebtoken:jjwt-impl:0.10.5',
+            'io.jsonwebtoken:jjwt-jackson:0.10.5'
     )
 }

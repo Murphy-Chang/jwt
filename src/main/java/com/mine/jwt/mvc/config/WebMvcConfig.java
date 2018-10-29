@@ -64,8 +64,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-    	//访问"/"重定向到主页"/web/common/index"
-		registry.addRedirectViewController("/", "/web/common/index.html");
+    	//访问"/"重定向到登录页面
+		registry.addRedirectViewController("/", "/web/login/login.html");
         super.addViewControllers(registry);
     }
 }

@@ -13,4 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  * @date 2018/5/29
  */
 public interface TUserInfoRepository extends CrudRepository<TUserInfo, Integer> {
+	public TUserInfo findByUserName(String userName);
+	public TUserInfo findByUserId(int userId);
 }

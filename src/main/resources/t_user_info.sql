@@ -1,19 +1,3 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : mine京东云
- Source Server Type    : MySQL
- Source Server Version : 50720
- Source Host           : 116.196.96.175:3306
- Source Schema         : mine
-
- Target Server Type    : MySQL
- Target Server Version : 50720
- File Encoding         : 65001
-
- Date: 14/08/2018 12:14:19
-*/
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
